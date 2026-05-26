@@ -907,6 +907,175 @@
     .steps-row { flex-direction: column; align-items: stretch; }
     .step-arrow { transform: rotate(90deg); text-align: center; }
   }
+  /* ── Decision margin banner ─────────────────────────────────── */
+  .margin-banner {
+    display: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    border: 1.5px solid;
+  }
+  .margin-banner.margin-strong { background: #f0fdf4; border-color: #059669; color: #065f46; }
+  .margin-banner.margin-moderate { background: #fffbeb; border-color: #d97706; color: #92400e; }
+  .margin-banner.margin-weak { background: #fef2f2; border-color: #dc2626; color: #991b1b; }
+  .margin-banner.margin-single { background: #f0f4ff; border-color: #6b7280; color: #374151; }
+  .margin-banner-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+  .margin-badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px;
+    margin-right: 8px;
+    background: currentColor;
+    color: #fff;
+  }
+  .margin-scores { font-size: 12px; color: var(--muted); margin-top: 4px; font-family: var(--mono); }
+
+  /* ── Do-Not-Use flag ─────────────────────────────────────────── */
+  .dnu-flag {
+    background: #fef2f2;
+    border: 1.5px solid #fca5a5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+  }
+  .dnu-title {
+    font-size: 12px; font-weight: 700; color: #dc2626;
+    margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+  }
+  .dnu-reason {
+    font-size: 12px; color: #991b1b;
+    padding: 3px 0;
+    display: flex; align-items: flex-start; gap: 6px;
+  }
+  .dnu-reason::before { content: '•'; flex-shrink: 0; }
+
+  /* ── Explainability block ────────────────────────────────────── */
+  .explain-block {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .explain-title {
+    font-size: 12px; font-weight: 700; color: var(--accent);
+    margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
+  }
+  .explain-item {
+    font-size: 12px; color: var(--text-2);
+    padding: 3px 0; line-height: 1.5;
+  }
+
+  /* ── Scientist / Informatics view toggle ────────────────────── */
+  .view-toggle {
+    display: flex; gap: 4px;
+    margin-bottom: 12px;
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 3px;
+    width: fit-content;
+  }
+  .view-btn {
+    font-size: 12px; font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: none; cursor: pointer;
+    background: none; color: var(--muted);
+    transition: background 0.15s, color 0.15s;
+  }
+  .view-btn.active { background: var(--surface); color: var(--accent); box-shadow: var(--shadow); }
+  .view-scientist { display: block; }
+  .view-informatics { display: none; }
+
+  /* ── Decision report table ───────────────────────────────────── */
+  .decision-report {
+    margin-bottom: 24px;
+  }
+  .decision-report-table {
+    width: 100%; border-collapse: collapse; font-size: 12px;
+    background: var(--surface); border-radius: 10px;
+    overflow: hidden; box-shadow: var(--shadow);
+  }
+  .decision-report-table th {
+    background: #1e3a8a; color: #fff;
+    padding: 10px 12px; text-align: left;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
+  }
+  .decision-report-table td {
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .decision-report-table tr:last-child td { border-bottom: none; }
+  .decision-report-table tr:hover td { background: #f0f4ff; }
+  .dr-decision-rec { color: #059669; font-weight: 700; }
+  .dr-decision-backup { color: #d97706; font-weight: 700; }
+  .dr-decision-reject { color: #dc2626; font-weight: 700; }
+  .dr-margin-badge {
+    font-size: 10px; font-weight: 700; padding: 1px 7px;
+    border-radius: 20px; color: #fff;
+  }
+  .dr-margin-strong { background: #059669; }
+  .dr-margin-moderate { background: #d97706; }
+  .dr-margin-weak { background: #dc2626; }
+
+  /* ── Rejected examples section ───────────────────────────────── */
+  .rejected-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  .rejected-section-header {
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; user-select: none;
+  }
+  .rejected-section-title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .rejected-item {
+    margin-top: 12px;
+    background: #fef9f9;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .rejected-seq { font-family: var(--mono); font-size: 13px; color: var(--text); font-weight: 600; }
+  .rejected-meta { font-size: 11px; color: var(--muted); margin: 4px 0; }
+  .rejected-reason { font-size: 12px; color: #b91c1c; padding: 2px 0; }
+  .rejected-decision { font-size: 12px; font-weight: 700; color: #dc2626; margin-top: 6px; }
+
+  /* ── Audit trail ─────────────────────────────────────────────── */
+  .audit-trail {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  .audit-trail-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+  .audit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .audit-item { }
+  .audit-key { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .audit-val { font-size: 12px; color: var(--text); font-family: var(--mono); }
+  .audit-limitations { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .audit-lim-title { font-size: 12px; font-weight: 700; color: var(--orange); margin-bottom: 6px; }
+  .audit-lim-item { font-size: 12px; color: var(--text-2); padding: 2px 0; }
+  .audit-lim-item::before { content: '⚠ '; }
+
+  /* ── Limitations notice (upload panel) ──────────────────────── */
+  .limitations-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #78350f;
+  }
+  .limitations-title { font-weight: 700; margin-bottom: 6px; color: #92400e; }
+  .limitations-item { padding: 2px 0; }
+  .limitations-item::before { content: '⚠ '; }
 </style>
 </head>
 <body>
@@ -935,31 +1104,31 @@
 
     <!-- Hero section -->
     <div class="hero-section">
-      <div class="hero-badge">🧬 Powered by real genome-wide analysis</div>
-      <h1 class="hero-title">Design CRISPR guides that actually work</h1>
-      <p class="hero-sub">SnipGen combines a trained ML model, real off-target genome search (Cas-OFFinder), and clinical consequence scoring — in one tool. No PhD required.</p>
+      <div class="hero-badge">🔬 Research Informatics · Decision-Support Pipeline</div>
+      <h1 class="hero-title">CRISPR guide RNA decision-support — not just a generator</h1>
+      <p class="hero-sub">SnipGen ranks candidate guides, explains each decision, flags biological risks, and quantifies ranking confidence — so scientists understand <em>which recommendation to trust</em>, not just which number is highest.</p>
 
       <div class="compare-grid">
         <div class="compare-card compare-bad">
           <div class="compare-label">Benchling / CRISPOR / IDT</div>
           <ul>
-            <li>❌ Rule-based scoring only</li>
-            <li>❌ No population variant filter</li>
+            <li>❌ Rule-based scoring — no experimental calibration</li>
+            <li>❌ No population variant (SNP) filter</li>
             <li>❌ No isoform specificity check</li>
-            <li>❌ Manual FASTA upload required</li>
-            <li>❌ No cloning oligos generated</li>
-            <li>❌ No base editing window analysis</li>
+            <li>❌ No decision margin or confidence signal</li>
+            <li>❌ No per-guide rejection explanation</li>
+            <li>❌ No cloning oligos or base-editing compatibility</li>
           </ul>
         </div>
         <div class="compare-card compare-good">
-          <div class="compare-label">SnipGen — what you get</div>
+          <div class="compare-label">SnipGen — decision-support layer</div>
           <ul>
-            <li>✅ ML model trained on 5,310 real Azimuth guides</li>
-            <li>✅ gnomAD v4 population SNP filter</li>
+            <li>✅ ML model trained on 5,310 real Azimuth screen guides (Spearman 0.556)</li>
+            <li>✅ gnomAD v4 seed-region SNP filter — population-aware</li>
             <li>✅ Isoform specificity across all RefSeq transcripts</li>
-            <li>✅ Auto-fetch any gene from NCBI by name</li>
-            <li>✅ Cloning oligos ready to order (BbsI/BsmBI)</li>
-            <li>✅ CBE/ABE base editing window visualized per guide</li>
+            <li>✅ Decision margin: tells you when the ranking is uncertain</li>
+            <li>✅ Per-guide explainability: why ranked, why rejected</li>
+            <li>✅ Audit trail: run ID, database versions, model version — reproducible</li>
           </ul>
         </div>
       </div>
@@ -968,26 +1137,34 @@
         <div class="step-card">
           <div class="step-num">1</div>
           <div class="step-title">Enter your gene</div>
-          <div class="step-desc">Type TP53, BRCA1, or any gene name — auto-fetched from NCBI</div>
+          <div class="step-desc">Type TP53, BRCA1, or any gene — auto-fetched from NCBI RefSeq</div>
         </div>
         <div class="step-arrow">→</div>
         <div class="step-card">
           <div class="step-num">2</div>
-          <div class="step-title">AI designs guides</div>
-          <div class="step-desc">ML scoring + real genome search + gnomAD + isoform checks</div>
+          <div class="step-title">Pipeline scores &amp; ranks</div>
+          <div class="step-desc">ML scoring · gnomAD SNP filter · isoform check · ClinVar annotation</div>
         </div>
         <div class="step-arrow">→</div>
         <div class="step-card">
           <div class="step-num">3</div>
-          <div class="step-title">Review results</div>
-          <div class="step-desc">Compare guides side-by-side, see base editing windows</div>
+          <div class="step-title">Review with confidence</div>
+          <div class="step-desc">Decision margin, per-guide explainability, and risk flags shown</div>
         </div>
         <div class="step-arrow">→</div>
         <div class="step-card">
           <div class="step-num">4</div>
-          <div class="step-title">Order oligos</div>
-          <div class="step-desc">One-click cloning oligos ready for BbsI/BsmBI ligation</div>
+          <div class="step-title">Export &amp; validate</div>
+          <div class="step-desc">Cloning oligos ready to order · audit trail for reproducibility</div>
         </div>
+      </div>
+
+      <div class="limitations-box">
+        <div class="limitations-title">⚠ Research prototype — not a clinical or therapeutic-use tool</div>
+        <div class="limitations-item">Off-target score before CRISPOR returns is a sequence heuristic, not genome-wide alignment</div>
+        <div class="limitations-item">gnomAD coordinate mapping approximates intron positions — most accurate for cDNA-level analysis</div>
+        <div class="limitations-item">Output positions are mRNA coordinates, not GRCh38 genomic chr:pos</div>
+        <div class="limitations-item">Final guide selection requires scientist review and wet-lab validation (T7E1, TIDE, or NGS)</div>
       </div>
     </div>
 
@@ -1219,6 +1396,9 @@
       <span class="crispor-banner-text"></span>
     </div>
 
+    <!-- Decision margin banner (key decision-support feature) -->
+    <div id="margin-banner" class="margin-banner"></div>
+
     <!-- Stats -->
     <div class="stats-row" id="stats-row"></div>
 
@@ -1245,11 +1425,28 @@
       <div class="radar-legend" id="radar-legend"></div>
     </div>
 
+    <!-- Decision Report (compact summary table) -->
+    <div class="section-header">
+      <div class="section-title">Decision Report <span class="section-count" id="report-count"></span></div>
+      <div style="font-size:12px;color:var(--muted)">Ranked summary — each guide's recommendation, confidence, and margin</div>
+    </div>
+    <div class="decision-report" id="decision-report"></div>
+
     <!-- Top guide cards -->
     <div class="section-header">
       <div class="section-title">Top Guides <span class="section-count" id="top-count"></span></div>
+      <div style="font-size:12px;color:var(--muted)">Click a card to expand explainability, risk flags, and cloning oligos</div>
     </div>
     <div class="guide-cards" id="guide-cards"></div>
+
+    <!-- Rejected guide examples (transparency / maturity signal) -->
+    <div id="rejected-section" class="rejected-section" style="display:none">
+      <div class="rejected-section-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display==='none'?'block':'none'">
+        <div class="rejected-section-title">🚫 Rejected Candidates — Why Guides Were Excluded</div>
+        <span style="font-size:12px;color:var(--muted)">▼ expand</span>
+      </div>
+      <div id="rejected-body" style="display:none"></div>
+    </div>
 
     <!-- Export -->
     <div class="export-row">
@@ -1283,6 +1480,10 @@
         <tbody id="results-tbody"></tbody>
       </table>
     </div>
+
+    <!-- Audit trail (reproducibility) -->
+    <div id="audit-trail-section" class="audit-trail" style="display:none"></div>
+
   </div>
 </div>
 
@@ -1759,6 +1960,15 @@ function renderDashboard(data) {
       </div>`
     ).join('');
 
+  // Decision margin banner
+  renderDecisionMargin(data);
+
+  // Decision report table
+  renderDecisionReport(candidates, data.decision_margin);
+
+  // Rejected section
+  renderRejectedSection(data);
+
   // Radar for top guide
   if (candidates.length > 0) renderRadar(candidates[0]);
   else document.getElementById('profile-card').style.display = 'none';
@@ -1767,6 +1977,9 @@ function renderDashboard(data) {
   const top5 = candidates.slice(0, 5);
   document.getElementById('top-count').textContent = top5.length;
   document.getElementById('guide-cards').innerHTML = top5.map(renderGuideCard).join('');
+
+  // Audit trail
+  renderAuditTrail(data);
   document.querySelectorAll('.guide-card-header').forEach(h => {
     h.addEventListener('click', e => {
       if (e.target.closest('.card-copy')) return;
@@ -1811,6 +2024,179 @@ function scoreColor(val) {
   if (val >= 50) return 'var(--yellow)';
   if (val >= 20) return 'var(--orange)';
   return 'var(--red)';
+}
+
+// ── Decision margin banner ─────────────────────────────────────
+function renderDecisionMargin(data) {
+  const dm  = data.decision_margin;
+  const el  = document.getElementById('margin-banner');
+  if (!el || !dm || !dm.label) return;
+
+  const classMap = { STRONG: 'margin-strong', MODERATE: 'margin-moderate', WEAK: 'margin-weak', SINGLE: 'margin-single' };
+  const iconMap  = { STRONG: '✅', MODERATE: '⚠', WEAK: '🔴', SINGLE: 'ℹ' };
+  const icon = iconMap[dm.label] || '⚠';
+  const cls  = classMap[dm.label] || 'margin-moderate';
+
+  const scoresText = dm.second_score != null
+    ? `Top: ${dm.top_score} · 2nd: ${dm.second_score}${dm.third_score != null ? ' · 3rd: '+dm.third_score : ''} · Gap: ${dm.margin} pts`
+    : `Score: ${dm.top_score}`;
+
+  el.className   = `margin-banner ${cls}`;
+  el.style.display = 'block';
+  el.innerHTML = `
+    <div class="margin-banner-title">${icon} Decision Confidence: <strong>${dm.label}</strong> MARGIN
+      ${infoLabel('Decision Margin', 'Measures how far the top-ranked guide scores above the next candidate. A weak margin means scores are statistically close — do not over-trust the #1 ranking. This concept is analogous to confidence/margin in predictive modeling: a score alone is not enough without knowing how far it is from risky alternatives.')}
+    </div>
+    <div>${dm.advice}</div>
+    <div class="margin-scores">${scoresText}</div>`;
+}
+
+// ── Decision report table ──────────────────────────────────────
+function renderDecisionReport(candidates, dm) {
+  const el = document.getElementById('decision-report');
+  if (!el || !candidates.length) return;
+
+  document.getElementById('report-count').textContent = candidates.length;
+
+  const rows = candidates.map((c, i) => {
+    const bd     = c.score_breakdown || {};
+    const rank   = bd.rank || i + 1;
+    const gid    = bd.guide_id || `SG-${String(rank).padStart(3,'0')}`;
+    const gc     = (c.gc_content * 100).toFixed(1);
+    const pam    = c.pam || 'NGG';
+    const ots    = c.on_target_score;
+    const iso    = (bd.isoform || c.isoform || {});
+    const isoLbl = iso.label ? `${iso.n_hits||'?'}/${iso.n_total||'?'}` : '—';
+    const gnom   = (bd.gnomad || c.gnomad || {});
+    const snpRsk = gnom.gnomad_checked ? (gnom.risk_level || 'NONE') : '—';
+    const cmit   = c.crispor_mit_score ?? bd.crispor_mit;
+    const otRisk = cmit != null ? `MIT:${cmit}` : (c.off_target_score >= 75 ? 'Low' : c.off_target_score >= 50 ? 'Mod' : 'High');
+
+    // Decision logic
+    let decision, decCls;
+    if (c.do_not_use) {
+      decision = 'DO NOT USE'; decCls = 'dr-decision-reject';
+    } else if (c.safety_label === 'HIGH') {
+      if (i === 0) { decision = 'Recommend'; decCls = 'dr-decision-rec'; }
+      else         { decision = 'Backup';    decCls = 'dr-decision-backup'; }
+    } else if (c.safety_label === 'MEDIUM') {
+      decision = 'Validate first'; decCls = 'dr-decision-backup';
+    } else {
+      decision = 'Caution'; decCls = 'dr-decision-reject';
+    }
+
+    // Margin badge for top guide
+    let marginBadge = '';
+    if (i === 0 && dm) {
+      const mc = { STRONG:'dr-margin-strong', MODERATE:'dr-margin-moderate', WEAK:'dr-margin-weak' }[dm.label] || 'dr-margin-moderate';
+      marginBadge = `<span class="dr-margin-badge ${mc}">${dm.label}</span>`;
+    }
+
+    return `<tr>
+      <td><strong>#${rank}</strong> <span style="color:var(--muted);font-size:11px">${gid}</span></td>
+      <td class="mono" style="font-size:12px">${c.sequence}</td>
+      <td><strong style="color:${scoreColor(ots)}">${ots}</strong></td>
+      <td>${gc}%</td>
+      <td class="mono" style="font-size:11px">${pam}</td>
+      <td><span style="color:${snpRsk==='NONE'?'var(--green)':snpRsk==='HIGH'?'var(--red)':'var(--orange)'}">${snpRsk}</span></td>
+      <td>${isoLbl}</td>
+      <td>${otRisk}</td>
+      <td>${marginBadge}</td>
+      <td class="${decCls}">${decision}</td>
+    </tr>`;
+  });
+
+  el.innerHTML = `<table class="decision-report-table">
+    <thead><tr>
+      <th>Rank</th><th>Sequence</th><th>On-Target</th><th>GC%</th><th>PAM</th>
+      <th>SNP Risk</th><th>Isoforms</th><th>Off-Target</th><th>Margin</th><th>Decision</th>
+    </tr></thead>
+    <tbody>${rows.join('')}</tbody>
+  </table>`;
+}
+
+// ── Rejected guide examples ────────────────────────────────────
+function renderRejectedSection(data) {
+  const sec = document.getElementById('rejected-section');
+  const body = document.getElementById('rejected-body');
+  if (!sec || !body) return;
+
+  const rs = data.rejection_summary;
+  if (!rs) { sec.style.display = 'none'; return; }
+
+  sec.style.display = 'block';
+  const title = sec.querySelector('.rejected-section-title');
+  if (title) title.textContent = `🚫 ${rs.n_rejected} Candidates Rejected — Why Guides Were Excluded`;
+
+  body.innerHTML = `<div style="margin-top:12px;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #fecaca">
+    <div style="font-size:12px;color:#7f1d1d;line-height:1.6">${rs.note}</div>
+  </div>
+  <div style="margin-top:10px;font-size:12px;color:var(--muted);padding:0 4px">
+    <strong>Why show rejections?</strong> A mature decision-support system explains not only which candidates are recommended, but why others were excluded. Rejected guides are surfaced here for scientific transparency — not hidden.
+  </div>`;
+}
+
+// ── Audit trail ────────────────────────────────────────────────
+function renderAuditTrail(data) {
+  const el = document.getElementById('audit-trail-section');
+  if (!el || !data.audit_trail) return;
+  const at = data.audit_trail;
+  el.style.display = 'block';
+
+  const dbRows = Object.entries(at.database_versions || {}).map(([k,v]) =>
+    `<div class="audit-item"><div class="audit-key">${k}</div><div class="audit-val">${v}</div></div>`
+  ).join('');
+
+  const limItems = (at.known_limitations || []).map(l =>
+    `<div class="audit-lim-item">${l}</div>`
+  ).join('');
+
+  el.innerHTML = `<div class="audit-trail-title">🗂 Audit Trail — Run ${at.run_id}</div>
+  <div class="audit-grid">
+    <div class="audit-item"><div class="audit-key">Timestamp</div><div class="audit-val">${new Date(at.timestamp).toLocaleString()}</div></div>
+    <div class="audit-item"><div class="audit-key">Gene / Input</div><div class="audit-val">${at.input_gene}</div></div>
+    <div class="audit-item"><div class="audit-key">Organism</div><div class="audit-val">${at.organism}</div></div>
+    <div class="audit-item"><div class="audit-key">Cas Variant</div><div class="audit-val">${at.cas_variant}</div></div>
+    <div class="audit-item"><div class="audit-key">Model</div><div class="audit-val">${at.model_version}</div></div>
+    <div class="audit-item"><div class="audit-key">Guide Length</div><div class="audit-val">${at.guide_length} nt</div></div>
+    ${dbRows}
+  </div>
+  <div class="audit-limitations">
+    <div class="audit-lim-title">⚠ Known Limitations of This Run</div>
+    ${limItems}
+    <div style="margin-top:8px;font-size:12px;color:var(--text-2)">
+      Final guide selection requires scientist review and wet-lab validation. This report is a decision-support aid, not a clinical recommendation.
+    </div>
+  </div>`;
+}
+
+// ── Explainability block (per guide) ──────────────────────────
+function renderExplainability(c) {
+  const pts = c.explainability;
+  if (!pts || !pts.length) return '';
+  return `<div class="explain-block">
+    <div class="explain-title">💡 Why this guide was ranked here</div>
+    ${pts.map(p => `<div class="explain-item">${p}</div>`).join('')}
+  </div>`;
+}
+
+// ── Do-Not-Use flag (per guide) ───────────────────────────────
+function renderDoNotUse(c) {
+  if (!c.do_not_use || !c.dnu_reasons || !c.dnu_reasons.length) return '';
+  return `<div class="dnu-flag">
+    <div class="dnu-title">🚫 DO NOT USE — Critical Issues Detected</div>
+    ${c.dnu_reasons.map(r => `<div class="dnu-reason">${r}</div>`).join('')}
+  </div>`;
+}
+
+// ── Scientist / Informatics view toggle ───────────────────────
+function switchView(btn, cardEl) {
+  const mode = btn.dataset.view;
+  cardEl.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b === btn));
+  const sci = cardEl.querySelector('.view-scientist');
+  const inf = cardEl.querySelector('.view-informatics');
+  if (sci) sci.style.display = mode === 'scientist' ? 'block' : 'none';
+  if (inf) inf.style.display = mode === 'informatics' ? 'block' : 'none';
 }
 
 // ── Reverse complement (JS) ────────────────────────────────────
@@ -2046,26 +2432,36 @@ function renderGuideCard(c, i) {
     <input type="checkbox" class="comp-check" data-seq="${c.sequence}" onchange="toggleCompare(this,'${gid}')"> Add to comparison
   </label>`;
 
-  return `<div class="guide-card" data-seq="${c.sequence}">
-    <div class="guide-card-header">
-      <div class="guide-rank">#${rank}</div>
-      <div class="guide-id-tag">${gid}</div>
-      <div class="guide-seq">${c.sequence}</div>
-      <span class="safety-badge badge-${color}">${c.safety_label}</span>
-      <div class="score-inline">
-        <div class="score-track"><div class="score-fill" style="width:${c.final_score}%;background:${sc}"></div></div>
-        <div class="score-num" style="color:${sc}">${c.final_score}</div>
-      </div>
-      <button class="card-copy" data-seq="${c.sequence}${c.pam}">Copy</button>
-      <span class="chevron">▶</span>
-    </div>
-    <div class="guide-card-body">
+  // Do-Not-Use flag and explainability (from backend)
+  const dnuBlock   = renderDoNotUse(c);
+  const explainBlk = renderExplainability(c);
+
+  // Scientist view: plain summary; Informatics view: full breakdown
+  const scientistView = `
+    <div class="view-scientist">
+      ${dnuBlock}
+      ${explainBlk}
       <div class="meta-row">
         <div class="meta-item"><div class="meta-key">Sequence</div><div class="meta-val" style="color:var(--accent)">${c.sequence}</div></div>
         <div class="meta-item"><div class="meta-key">PAM</div><div class="meta-val">${c.pam}</div></div>
-        <div class="meta-item"><div class="meta-key">Location</div><div class="meta-val">${c.chromosome}:${c.start}–${c.end} (${c.strand})</div></div>
         <div class="meta-item"><div class="meta-key">GC Content</div><div class="meta-val">${(c.gc_content * 100).toFixed(1)}%</div></div>
-        <div class="meta-item"><div class="meta-key">Model</div><div class="meta-val" style="color:var(--green);font-size:11px">${bd.scorer === 'gradient_boosting_ml' ? '🤖 Azimuth ML' : '📐 Rule-based'}</div></div>
+        <div class="meta-item"><div class="meta-key">Safety</div><div class="meta-val"><span class="safety-badge badge-${color}">${c.safety_label}</span></div></div>
+      </div>
+      ${gnomadBadge(c)}
+      ${isoformBadge(c)}
+      ${crisprBadge}
+      ${baseEditBadge}
+      ${primers}
+    </div>`;
+
+  const informaticsView = `
+    <div class="view-informatics">
+      <div class="meta-row">
+        <div class="meta-item"><div class="meta-key">Sequence</div><div class="meta-val" style="color:var(--accent)">${c.sequence}</div></div>
+        <div class="meta-item"><div class="meta-key">PAM</div><div class="meta-val">${c.pam}</div></div>
+        <div class="meta-item"><div class="meta-key">mRNA Position</div><div class="meta-val" style="font-size:11px">${c.chromosome}:${c.start}–${c.end} (${c.strand})</div></div>
+        <div class="meta-item"><div class="meta-key">GC Content</div><div class="meta-val">${(c.gc_content * 100).toFixed(1)}%</div></div>
+        <div class="meta-item"><div class="meta-key">Scorer</div><div class="meta-val" style="color:var(--green);font-size:11px">${bd.scorer === 'gradient_boosting_ml' ? '🤖 Azimuth ML (GBR, n=5310)' : '📐 Rule-based'}</div></div>
       </div>
       <div class="dims-grid">
         ${dims.map(d => `
@@ -2087,6 +2483,29 @@ function renderGuideCard(c, i) {
       ${crisprBadge}
       ${baseEditBadge}
       ${primers}
+    </div>`;
+
+  return `<div class="guide-card" data-seq="${c.sequence}">
+    <div class="guide-card-header">
+      <div class="guide-rank">#${rank}</div>
+      <div class="guide-id-tag">${gid}</div>
+      <div class="guide-seq">${c.sequence}</div>
+      ${c.do_not_use ? '<span style="background:#dc2626;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;flex-shrink:0">🚫 FLAGGED</span>' : ''}
+      <span class="safety-badge badge-${color}">${c.safety_label}</span>
+      <div class="score-inline">
+        <div class="score-track"><div class="score-fill" style="width:${c.final_score}%;background:${sc}"></div></div>
+        <div class="score-num" style="color:${sc}">${c.final_score}</div>
+      </div>
+      <button class="card-copy" data-seq="${c.sequence}${c.pam}">Copy</button>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="guide-card-body">
+      <div class="view-toggle">
+        <button class="view-btn active" data-view="scientist" onclick="switchView(this, this.closest('.guide-card-body'))">🔬 Scientist View</button>
+        <button class="view-btn" data-view="informatics" onclick="switchView(this, this.closest('.guide-card-body'))">📊 Informatics View</button>
+      </div>
+      ${scientistView}
+      ${informaticsView}
       <div style="margin-top:10px">${compChk}</div>
     </div>
   </div>`;
