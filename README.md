@@ -166,4 +166,4 @@ Built as an independent biomedical engineering project to explore practical CRIS
 
 **Lakshya Dharwal**
 B.S.E. Biomedical Engineering, Arizona State University (May 2026)
-[github.com/lakshya-dharwal](https://github.com/lakshya-dharwal) | ldharwa2003@gmail.com
+[github.com/lakshya-dharwal](https://github.com/lakshya-dharwal) | ldharwal2003@gmail.com
